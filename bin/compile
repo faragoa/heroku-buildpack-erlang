@@ -189,6 +189,7 @@ else
         "rebar3")
             echo "-----> Building release with Rebar3"
             TERM=dumb
+	    ./rebar3 version
             ./rebar3 update
             ./rebar3 release -i true --dev-mode false  2>&1 | sed -u 's/^/       /'
             ;;
