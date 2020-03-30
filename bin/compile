@@ -190,7 +190,9 @@ else
             echo "-----> Building release with Rebar3"
             TERM=dumb
 	    ./rebar3 version
-            ./rebar3 update
+            echo "----------> rebar3 update"
+	    ./rebar3 update
+	    echo "----------> rebar3 release"
             ./rebar3 release -i true --dev-mode false  2>&1 | sed -u 's/^/       /'
             ;;
         "erlang.mk")
